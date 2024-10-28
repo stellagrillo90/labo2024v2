@@ -195,9 +195,10 @@ for ( irank in ranks ) {
         res <- system( "./subir.sh", intern= TRUE )
         dir.create("~/.virtual_documents", showWarnings=FALSE)
         file.remove("~/.virtual_documents/z-activity.txt") 
-        Sys.sleep( 20 )  # espero para no saturar
         cat( format(Sys.time(), "%Y%m%d %H%M%S"), "\n",
              file = "~/.virtual_documents/z-activity.txt")
+        Sys.sleep( 20 )  # espero para no saturar
+        file.remove("~/.virtual_documents/z-activity.txt") 
 
         res <- "Successfully"  # pequena ayuda ...
 
